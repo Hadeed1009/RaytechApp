@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "439623462593",
+    "project_id": "raytechtodo",
+    "storage_bucket": "raytechtodo.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:439623462593:android:205c97dc1e859122b4ae40",
+        "android_client_info": {
+          "package_name": "com.rayatecapp"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBZ3ipl_PVEE-2h6pa7mfLfGBW4IYt2iSg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
