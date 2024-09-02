@@ -1,7 +1,7 @@
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
-import HomeScreen from '../views/screens/HomeScreen';
+import HomeScreen from '../views/screens/Home';
 import LoginScreen from '../views/screens/LoginScreen';
 import SignUpScreen from '../views/screens/SignUpScreen';
 import CreateWorkSpace from '../views/screens/CreateWorkSpace';
@@ -10,6 +10,7 @@ import WorkspaceDetail from '../views/screens/WorkSpaceDetail';
 import AddTaskScreen from '../views/screens/AddTaskScreen';
 import EditTaskScreen from '../views/screens/EditTaskScreen';
 import AssignTaskScreen from '../views/screens/AssignTaskScreen';
+import { Colors } from '../utils/Color';
 
 const Stack = createStackNavigator();
 
@@ -20,7 +21,7 @@ const AppNavigator = () => {
         initialRouteName="Splash"
         screenOptions={{
           headerShown: false,
-          cardStyle: {backgroundColor: 'gray'},
+          cardStyle: {backgroundColor: Colors.lightPurple},
         }}>
         <Stack.Screen name="Login" component={LoginScreen} />
         <Stack.Screen name="SignUp" component={SignUpScreen} />
