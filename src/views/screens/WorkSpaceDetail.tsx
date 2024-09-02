@@ -1,10 +1,12 @@
 import React, {useState, useEffect} from 'react';
-import {View, Text, Button, FlatList, TouchableOpacity} from 'react-native';
+import {View, Text, Button, FlatList, StyleSheet} from 'react-native';
 import * as TaskController from '../../controllers/TaskController';
 import * as WorkspaceController from '../../controllers/WorkSpaceController';
 import auth from '@react-native-firebase/auth';
 import {useNavigation, useRoute} from '@react-navigation/native';
 import {StackNavigationProp} from '@react-navigation/stack';
+import {Colors} from '../../utils/Color';
+import Custom_Button from '../components/CustomButton';
 
 type RootStackParamList = {
   AddTask: {workspaceId: string};
@@ -14,7 +16,15 @@ type RootStackParamList = {
 
 type NavigationProp = StackNavigationProp<RootStackParamList>;
 const WorkspaceDetail = () => {
-  const [tasks, setTasks] = useState<{ id: string, title: string, description: string, dueDate: string, completed: boolean }[]>([]);
+  const [tasks, setTasks] = useState<
+    {
+      id: string;
+      title: string;
+      description: string;
+      dueDate: string;
+      completed: boolean;
+    }[]
+  >([]);
   const [isAdmin, setIsAdmin] = useState(false);
   const route = useRoute();
   const {workspaceId} = route.params as {workspaceId: string};
@@ -61,9 +71,9 @@ const WorkspaceDetail = () => {
   };
 
   return (
-    <View>
-      <Text>Workspace Detail</Text>
-      {isAdmin && <Button title="Add Task" onPress={handleAddTask} />}
+    <View style = {styles.container}>
+      <Text style={styles.titleText}>Workspace Detail</Text>
+      {isAdmin && <Custom_Button text="Add Task" onPress={handleAddTask} />}
       <FlatList
         data={tasks}
         keyExtractor={item => item.id}
@@ -106,3 +116,17 @@ const WorkspaceDetail = () => {
 };
 
 export default WorkspaceDetail;
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+  },
+  titleText: {
+    fontSize: 20,
+    fontWeight: '700',
+    color: Colors.primaryColor,
+    textAlign: 'center',
+    marginVertical: 20,
+  },
+});

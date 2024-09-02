@@ -13,6 +13,14 @@ export const getWorkspaceById = async (workspaceId: string) => {
   return await WorkSpaceModel.getWorkspaceById(workspaceId);
 };
 
+export const myWorkspaces = async () => {
+  return await WorkSpaceModel.myWorkspaces();
+};
+
+export const myJoinedWorkspaces = async () => {
+  return await WorkSpaceModel.myJoinedWorkspaces();
+};
+
 export const joinWorkspace = async (workspaceId: string, userId: string) => {
   await WorkSpaceModel.joinWorkSpace(workspaceId, userId);
 };
